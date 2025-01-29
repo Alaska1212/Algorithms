@@ -1,0 +1,10 @@
+def f(n):
+    sum = 0                     |O(1)
+    for i in range(1, n+1):     |O(n)
+        sum = sum + i           |O(n)
+    return sum                  |O(1)
+
+виходить, що в найгіршому випадку буде O(n)
+можна покращити асимптотичну оцінку до O(1):
+def f(n):
+    return n*(n+1)/2
