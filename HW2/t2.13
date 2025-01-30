@@ -1,0 +1,30 @@
+a)
+T(n) =  | O(1)      n=0
+        | T(n-1) + O(1)     n=>1
+
+T(n) = T(n-1) + C <= T(n-2) + 2*C <= T(n-3) + 3*C = ... =
+  = T(n-n) + n*C = C + n*C = (n+1)C = O(n)
+
+d)
+T(n) =  | O(1)      n<=a, a>1
+        | a*T(n-a) + O(1)     n>a
+
+T(n) = a*T(n-a) + C <= a^2 *T(n-2*a) + a*C + C =
+    = a^k *T(n-k*a) + a^(k-1)*C +...+ C = O(a^(n/a))
+
+g)
+T(n) =  | O(1)      n=1
+        | a*T(n/a) + O(1)     n=>2, a=>2
+
+T(n) = a*T(n/a) + C <= a^2 *T(n/a^2) + a*C + C = a^k *T(n/k*a) + a^(k-1)*C +...+ C =
+        |k = log a(n)|= O(a^(log a(n))) = O(n)
+трішки схожий на попередній, але через те що ми n ділимо на а,
+ то з'являється логарифм з основою а
+
+h)
+T(n) =  | O(1)      n=1
+        | a*T(n/a) + O(n)     n=>2, a=>2
+
+T(n) = a*T(n/a) + n*C <= a^2 *T(n/a^2) + a*(n/a)*C + n*C =
+    = a^2 *T(n/a^2) + n*C + n*C = a^2 *T(n/a^2) + 2n*C =
+    = a^k *T(n/a^k) + kn*C = |k = log a(n)| = O(n*log a(n))
