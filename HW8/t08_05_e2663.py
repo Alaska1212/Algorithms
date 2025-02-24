@@ -1,3 +1,4 @@
+#Сортування бульбашкою
 def bubble_sort(n , lst):
     count = 0
     for num in range(n-1 , 0, -1):
